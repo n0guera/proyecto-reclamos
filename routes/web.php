@@ -32,4 +32,4 @@ Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () 
     Route::delete('reclamos/{reclamo}', [ReclamoController::class, 'destroy'])->name('reclamos.destroy');
 });
 
-Route::middleware(['auth'])->get('/mis-reclamos', [ReclamoController::class, 'misReclamos'])->name('reclamos.mios');
+Route::middleware(['auth'])->get('/mis-reclamos', [ReclamoController::class, 'misReclamos'])->name('reclamos.mis');
