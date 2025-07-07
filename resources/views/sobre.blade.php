@@ -9,32 +9,32 @@
             $miembros = [
                 [
                     'nombre' => 'Agu Federico',
-                    'descripcion' => 'Descripcion',
-                    'avatar' => 'https://via.placeholder.com/150',
-                    'url' => 'https://github.com/fede'
+                    'descripcion' => 'Desarrollador web en formación, apasionado por el código limpio',
+                    'avatar' => 'https://github.com/agufedee.png',
+                    'url' => 'https://github.com/agufedee'
                 ],
                 [
                     'nombre' => 'Masacote Nahuel',
-                    'descripcion' => 'Descripcion',
-                    'avatar' => 'https://via.placeholder.com/150',
-                    'url' => 'https://nahuel.dev'
+                    'descripcion' => 'Estudiante de programación con enfoque en backend y bases de datos',
+                    'avatar' => 'https://github.com/nahuelmasacote.png',
+                    'url' => 'https://github.com/nahuelmasacote'
                 ],
                 [
                     'nombre' => 'Noguera Bruno',
-                    'descripcion' => 'Descripcion',
-                    'avatar' => 'https://via.placeholder.com/150',
-                    'url' => 'https://github.com/santi'
+                    'descripcion' => 'Futuro full-stack developer con ganas de crear soluciones reales',
+                    'avatar' => 'https://github.com/n0guera.png',
+                    'url' => 'https://github.com/n0guera'
                 ],
                 [
                     'nombre' => 'Olmedo Eric',
-                    'descripcion' => 'Descripcion',
-                    'avatar' => 'https://via.placeholder.com/150',
-                    'url' => 'https://portfolio.eric.com'
+                    'descripcion' => 'Apasionado por la tecnología, aprendiendo a construir el futuro',
+                    'avatar' => 'https://github.com/D4vidR0j4s.png',
+                    'url' => 'https://github.com/D4vidR0j4s'
                 ],
                 [
                     'nombre' => 'Viotti Elias',
-                    'descripcion' => 'Descripcion',
-                    'avatar' => 'https://via.placeholder.com/150',
+                    'descripcion' => 'Apasionado por la inovación y el cryptomundo',
+                    'avatar' => 'https://github.com/EliasViotti.png',
                     'url' => 'https://github.com/EliasViotti'
                 ],
             ];
@@ -42,11 +42,11 @@
 
         @foreach ($miembros as $m)
         <a href="{{ $m['url'] }}" target="_blank"
-           class="bg-white shadow-md hover:shadow-xl transition p-6 rounded-lg text-center w-72 group">
+           class="bg-gray-800  shadow-md hover:shadow-xl transition p-6 rounded-lg text-center w-72 group">
             <img src="{{ $m['avatar'] }}" alt="Avatar de {{ $m['nombre'] }}"
                  class="w-24 h-24 mx-auto rounded-full mb-4 border-4 border-[#C8A752] transition-transform group-hover:scale-105">
             <h3 class="text-lg font-semibold text-[#C8A752]">{{ $m['nombre'] }}</h3>
-            <p class="text-sm text-gray-600 mt-2">{{ $m['descripcion'] }}</p>
+            <p class="text-sm text-gray-400 mt-2">{{ $m['descripcion'] }}</p>
         </a>
         @endforeach
     </div>
