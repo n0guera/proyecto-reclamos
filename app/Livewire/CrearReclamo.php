@@ -14,6 +14,8 @@ class CrearReclamo extends Component
     public $categoria_id;
     public $categorias = [];
 
+    public $formKey;
+
     protected $rules = [
         'descripcion' => 'required|string|min:10',
         'ubicacion' => 'required|string|max:255',
@@ -23,29 +25,31 @@ class CrearReclamo extends Component
     public function mount()
     {
         $this->categorias = Categoria::all();
+
+        $this->formKey = uniqid();
     }
 
     public function submit()
     {
+
         $this->validate();
 
         Reclamo::create([
             'descripcion' => $this->descripcion,
             'ubicacion' => $this->ubicacion,
             'categoria_id' => $this->categoria_id,
-            'usuario_id' => Auth::id(),
+            'user_id' => Auth::id(),
             'estado' => 'pendiente',
-            'fecha_creacion' => now()
         ]);
 
         // Resetear formulario
         $this->reset(['descripcion', 'ubicacion', 'categoria_id']);
-        
+
+        $this->formKey = uniqid();
+
         // Emitir evento de éxito
-        $this->dispatch('alert', [
-            'type' => 'success',
-            'message' => 'Reclamo creado exitosamente!'
-        ]);
+        session()->flash('success', '¡Reclamo creado exitosamente!');
+
     }
 
     public function render()

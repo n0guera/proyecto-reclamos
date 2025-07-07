@@ -35,7 +35,7 @@ class Login extends Component
                 ]);
             }
 
-            return redirect()->intended('/dashboard');
+            return redirect()->intended('/mi-cuenta');
         } finally {
             $this->isLoading = false;
         }

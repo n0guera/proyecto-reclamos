@@ -1,26 +1,40 @@
 <div>
     <!-- Mostrar alertas -->
-    <div x-data="{ showAlert: false, alertMessage: '', alertType: '' }"
-         x-on:alert.window="showAlert = true; alertMessage = $event.detail.message; alertType = $event.detail.type; setTimeout(() => showAlert = false, 5000)"
-         x-show="showAlert"
-         x-transition:enter="transition ease-out duration-300"
-         x-transition:enter-start="opacity-0 transform translate-y-4"
-         x-transition:enter-end="opacity-100 transform translate-y-0"
-         x-transition:leave="transition ease-in duration-200"
-         x-transition:leave-start="opacity-100 transform translate-y-0"
-         x-transition:leave-end="opacity-0 transform translate-y-4"
-         class="fixed top-4 right-4 z-50 w-80 p-4 rounded shadow-lg"
-         :class="{
-             'bg-green-100 border-green-500 text-green-700': alertType === 'success',
-             'bg-red-100 border-red-500 text-red-700': alertType === 'error'
-         }">
-        <div class="flex items-center">
-            <span x-text="alertMessage" class="flex-grow"></span>
-            <button @click="showAlert = false" class="ml-2 text-lg">&times;</button>
-        </div>
+    <div 
+    x-data="{ showAlert: false, alertMessage: '', alertType: '' }"
+    x-on:alert.window="
+        showAlert = true; 
+        alertMessage = $event.detail.message; 
+        alertType = $event.detail.type; 
+        setTimeout(() => showAlert = false, 5000);
+    "
+    x-show="showAlert"
+    x-transition
+    class="fixed top-4 right-4 z-50 w-80 p-4 rounded shadow-lg"
+    :class="{
+        'bg-green-100 border-green-500 text-green-700': alertType === 'success',
+        'bg-red-100 border-red-500 text-red-700': alertType === 'error'
+    }"
+>
+    <div class="flex items-center">
+        <span x-text="alertMessage" class="flex-grow"></span>
+        <button @click="showAlert = false" class="ml-2 text-lg">&times;</button>
     </div>
+</div>
 
-    <form wire:submit.prevent="submit" class="space-y-6">
+@if (session()->has('success'))
+    <div 
+        x-data="{ show: true }"
+        x-show="show"
+        x-init="setTimeout(() => show = false, 3000)"
+        class="p-3 mb-4 rounded bg-green-100 text-green-800 border border-green-300 transition ease-in-out duration-500"
+        x-transition
+    >
+        {{ session('success') }}
+    </div>
+@endif
+
+    <form wire:submit.prevent="submit" class="space-y-6" wire:key="form-{{ $formKey }}">
         <!-- Descripción -->
         <div>
             <label for="descripcion" class="block text-sm font-medium text-gray-700">Descripción *</label>
