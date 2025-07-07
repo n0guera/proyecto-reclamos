@@ -22,7 +22,7 @@ Route::get('/sobre-nosotros', function () {
         [
             'nombre' => 'Olmedo Eric',
             'slug' => 'eric-olmedo',
-            'github_user' => 'ericolmedo',
+            'github_user' => 'D4vidR0j4s',
         ],
         [
             'nombre' => 'Viotti Pablo Elias',
@@ -33,4 +33,3 @@ Route::get('/sobre-nosotros', function () {
 
     return view('sobre-nosotros', compact('integrantes'));
 })->name('sobre-nosotros');
-
