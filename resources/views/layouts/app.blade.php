@@ -57,7 +57,7 @@
         <div class="max-w-7xl mx-auto px-6 py-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div>
                 <h4 class="text-lg font-semibold text-[#C8A752] mb-2">Municipalidad de Narnia</h4>
-                <p class="text-sm">Comprometidos con una gestión transparente y cercana.</p>
+                <p class="text-sm">Podés entrar por el ropero, pero salís con deuda de patente..</p>
             </div>
 
             <div>

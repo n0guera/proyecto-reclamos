@@ -2,7 +2,7 @@
 
 @section('content')
     <h1 class="text-3xl font-bold mb-4">Bienvenidos a la página oficial de la <span class="text-[#C8A752]">Municipalidad de Narnia</span></h1>
-    <p class="text-gray-300">Aquí podras encontrar algunos de los reclamos que puedes realizar.<br><br></p>
+    <p class="text-gray-300">Turnos disponibles para 2047. <span class ="text-[#C8A752] text-2xl">Si no hay alguna guerra de por medio</span><br><br></p>
     <p class="text-gray-300">Recuerda que debes haber iniciado sesión para poder realizar un reclamo</p>
     <div class="grid gap-6 mt-8 sm:grid-cols-2 lg:grid-cols-3">
         <div class="bg-gray-800 shadow-md rounded-lg p-6 hover:shadow-xl transition">
