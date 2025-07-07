@@ -22,9 +22,7 @@ Route::middleware('auth')->group(function () {
         return view('mi-cuenta'); 
     })->name('mi-cuenta');
     
-    Route::get('/sobre-nosotros', function () {
-        return view('sobre-nosotros');  
-    })->name('sobre-nosotros');
+    require __DIR__.'/sobre-nosotros.php'; 
     
     Route::post('/logout', LogoutController::class)->name('logout');
 });
