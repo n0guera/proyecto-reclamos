@@ -37,8 +37,8 @@ class Register extends Component
 
         Auth::login($user);
         $this->isLoading = false;
-        
-        return redirect()->route('dashboard')->with('success', '¡Registro exitoso!');
+
+        return redirect()->route('mi-cuenta')->with('success', '¡Registro exitoso!');
     }
 
     public function render()
