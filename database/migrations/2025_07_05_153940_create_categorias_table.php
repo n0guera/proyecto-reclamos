@@ -17,6 +17,14 @@ return new class extends Migration
             $table->text('descripcion')->nullable();
             $table->timestamps();
         });
+
+        DB::table('categorias')->insert([
+            ['nombre' => 'Electrotecnia'],
+            ['nombre' => 'Gestión Ambiental'],
+            ['nombre' => 'Mantenimiento de la Vía Pública'],
+            ['nombre' => 'Espacios Verdes'],
+            ['nombre' => 'Infraestructura Pluvial']
+        ]);
     }
 
     /**
