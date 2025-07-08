@@ -21,6 +21,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'dni',
+        'domicilio',
+        'telefono',
     ];
 
     /**
@@ -44,5 +47,9 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+    public function reclamos()
+    {
+        return $this->hasMany(Reclamo::class, 'id_usuarios');
     }
 }
